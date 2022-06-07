@@ -1,0 +1,311 @@
+<!--
+ 		1. Study regex
+ 	-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculator</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<div
+			class="container mt-3 dark-background-container border border-dark border-3 border-end-0 border-start-0"
+			border-dark
+		>
+			<div class="row ps-1 pe-1">
+				<div
+					class="col border-bottom border-dark border-1 rounded-top"
+					id="screen"
+				></div>
+			</div>
+			<div class="row row-cols-6">
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-top border-start"
+					id="rad"
+					data-bs-toggle="tooltip"
+					title="Change angle to radian"
+				>
+					Rad
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-top"
+					id="deg"
+					data-bs-toggle="tooltip"
+					title="Change angle to degree"
+				>
+					Deg
+				</div>
+
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-top bracket"
+					data-bs-toggle="tooltip"
+					title="Open Bracket"
+					id="open-bracket"
+				>
+					(
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-top bracket"
+					data-bs-toggle="tooltip"
+					title="Closing Bracket"
+					id="close-bracket"
+				>
+					)
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-top arith-operator basic"
+					data-bs-toggle="tooltip"
+					title="Modulo i.e. remainder"
+				>
+					%
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-top extra-operator"
+					id="clear-all"
+					data-bs-toggle="tooltip"
+					title="Clear"
+				>
+					CE
+				</div>
+			</div>
+			<div class="row row-cols-6">
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-start extra-operator"
+					id="inverse"
+					data-bs-toggle="tooltip"
+					title="Inverse"
+				>
+					INV
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell trig-operator"
+					data-bs-toggle="tooltip"
+					title="sine of an angle"
+					id="sin"
+				>
+					sin
+				</div>
+
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					7
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					8
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					9
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell arith-operator basic"
+				>
+					÷
+				</div>
+			</div>
+			<div class="row row-cols-6">
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-start"
+					id="pi"
+				>
+					π
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell trig-operator"
+					data-bs-toggle="tooltip"
+					title="cosine of an angle"
+					id="cos"
+				>
+					cos
+				</div>
+
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					4
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					5
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					6
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell arith-operator basic"
+				>
+					x
+				</div>
+			</div>
+			<div class="row row-cols-6">
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-start"
+					id="euler-constant"
+				>
+					e
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell trig-operator"
+					data-bs-toggle="tooltip"
+					title="tangent of an angle"
+					id="tan"
+				>
+					tan
+				</div>
+
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					1
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					2
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					3
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell arith-operator basic"
+				>
+					-
+				</div>
+			</div>
+			<div class="row row-cols-6">
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-start arith-operator"
+					id="factorial"
+					data-bs-toggle="tooltip"
+					title="Factorial"
+				>
+					!
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell arith-operator"
+				>
+					∛
+				</div>
+
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					.
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell num"
+				>
+					0
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell"
+					id="equals"
+				>
+					=
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell arith-operator basic"
+				>
+					+
+				</div>
+			</div>
+			<div class="row row-cols-6">
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell border-start"
+					id="theme"
+					data-bs-toggle="tooltip"
+					title="Changes Theme"
+				>
+					Theme
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell arith-operator ln"
+					data-bs-toggle="tooltip"
+					title="Natural Logarithm"
+				>
+					ln
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell arith-operator log"
+					data-bs-toggle="tooltip"
+					title="Logarithm to the base 10"
+				>
+					log
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell arith-operator"
+				>
+					√
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell arith-operator basic"
+				>
+					^
+				</div>
+				<div
+					class="col border-end border-bottom border-dark border-3 rounded-3 cell bg-warning text-dark"
+					id="history"
+					data-bs-toggle="tooltip"
+					title="History of all previous calculations"
+				>
+					History
+				</div>
+			</div>
+		</div>
+		<div
+			class="d-flex justify-content-center align-items-center mt-3 mb-3"
+			id="extra-calculations"
+		>
+			<a
+				class="rounded-pill bg-primary text-white p-2 me-5"
+				href="./matrix_Oper.html"
+			>
+				Matrix Calculations
+			</a>
+			<a
+				class="rounded-pill bg-primary text-white p-2 ms-5"
+				href="./graph_plot.html"
+			>
+				Graphical Calculations
+			</a>
+		</div>
+		<div class="hide w-75 m-auto mt-2 mb-2" id="history-container"></div>
+		<footer class="mt-2 bg-danger text-center text-white">
+			Please choose the angle type(Radian or Degree) before clicking any
+			trignometric operator
+		</footer>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			var tooltipTriggerList = [].slice.call(
+				document.querySelectorAll('[data-bs-toggle="tooltip"]')
+			);
+			var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+				return new bootstrap.Tooltip(tooltipTriggerEl);
+			});
+		</script>
+		<script src="./main.js"></script>
+	</body>
+</html>

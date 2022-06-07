@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Graph Plotting</title>
+		<link rel="stylesheet" href="graph_style.css" />
+	</head>
+	<body>
+		<img src="./photo-1543286386-713bdd548da4.avif" class="image" />
+		<h1 class="main-heading">Graph Plotter</h1>
+		<div
+			id="calculator"
+			style="width: 600px; height: 400px; margin: auto"
+		></div>
+		<script src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+		<script>
+			var elt = document.getElementById("calculator");
+			var calculator = Desmos.GraphingCalculator(elt);
+			calculator.setExpression({ id: "graph1", latex: "y=x^2" });
+		</script>
+	</body>
+</html>

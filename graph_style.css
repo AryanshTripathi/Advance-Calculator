@@ -1,0 +1,33 @@
+.dcg-icon-desmos,
+.dcg-powered-by {
+	display: none !important;
+}
+
+body {
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
+	background-color: #464646;
+}
+
+.main-heading {
+	color: white;
+	text-shadow: 1px 1px 2px #000, 0 0 25px #00f, 0 0 5px #00008b;
+	text-align: center;
+	text-decoration: underline;
+	margin-bottom: 1.5em !important;
+}
+
+#calculator {
+	border: 2px solid black;
+}
+
+.image {
+	position: absolute;
+	z-index: -1;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	opacity: 0.7;
+}
