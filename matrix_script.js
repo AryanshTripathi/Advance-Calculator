@@ -16,7 +16,6 @@ function handleSubmitFormClick() {
 	matrixA = [];
 	matrixB = [];
 	scalar = 0;
-	console.log("clicked");
 	let matrixRowA = Number(document.getElementById("row-input-a").value);
 	let matrixColA = Number(document.getElementById("col-input-a").value);
 	let matrixRowB = Number(document.getElementById("row-input-b").value);
@@ -30,16 +29,13 @@ function handleSubmitFormClick() {
 
 	scalar = Number(document.getElementById("scalar-input").value);
 
-	console.log(stringA);
-	console.log(stringB);
-
 	if (
 		matrixColA == NaN ||
 		matrixColB == NaN ||
 		matrixRowA == NaN ||
 		matrixRowB == NaN
 	) {
-		console.log(Error);
+		alert("Recheck the input");
 		return;
 	}
 
@@ -47,7 +43,7 @@ function handleSubmitFormClick() {
 		(matrixColB == 0 && matrixRowB != 0) ||
 		(matrixColB != 0 && matrixRowB == 0)
 	) {
-		console.log("Error");
+		alert("Recheck the input");
 		return;
 	}
 
@@ -56,10 +52,7 @@ function handleSubmitFormClick() {
 	if (val[val.length - 1] == "") val.pop();
 
 	if (val.length != matrixColA * matrixRowA) {
-		console.log(val);
-		console.log(matrixRowA);
-		console.log(matrixColA);
-		console.log("Error");
+		alert("Recheck the input");
 		return;
 	}
 
@@ -74,14 +67,13 @@ function handleSubmitFormClick() {
 			matrixA[i][j] = Number(matrixA[i][j]);
 		}
 	}
-	// console.log(matrixA);
 
 	if (matrixColB != 0 && matrixRowB != 0) {
 		let rowB = [];
 		let valB = stringB.split(" ");
 
 		if (valB.length != matrixColB * matrixRowB) {
-			console.log("Error");
+			alert("Recheck the input");
 			return;
 		}
 
@@ -97,7 +89,6 @@ function handleSubmitFormClick() {
 			}
 		}
 	}
-	console.log(a, b, c, d, matrixA, matrixB);
 }
 
 document
@@ -109,10 +100,8 @@ function handleAdditionClick() {
 			.getElementById("addition")
 			.removeChild(document.getElementById("addition").lastChild);
 	}
-	console.log("clicked");
 	isAdd = true;
 	if (matrixA.length == 0 || (matrixB.length == 0 && scalar == 0)) {
-		console.log("Can't perform the operation");
 		alert("Can't perform the operation");
 		return;
 	}
@@ -133,9 +122,7 @@ function handleAdditionClick() {
 			insertDiv("addition", true, matrixC._data);
 		}
 
-		console.log(matrixC);
 	} catch (err) {
-		console.log(err);
 		alert("Wrong input");
 	}
 }
@@ -144,7 +131,6 @@ document
 	.getElementById("subtraction")
 	.addEventListener("click", handleSubtractionClick);
 function handleSubtractionClick() {
-	console.log("clicked");
 	if (isSub) {
 		document
 			.getElementById("subtraction")
@@ -152,7 +138,6 @@ function handleSubtractionClick() {
 	}
 	isSub = true;
 	if (matrixA.length == 0 || (matrixB.length == 0 && scalar == 0)) {
-		console.log("Can't perform the operation");
 		alert("Can't perform the operation");
 		return;
 	}
@@ -167,16 +152,12 @@ function handleSubtractionClick() {
 	try {
 		if (matrixB.length > 0) {
 			matrixC = math.subtract(matrixA1, matrixB1);
-			console.log(matrixC);
 			insertDiv("subtraction", false, matrixC._data);
 		} else {
 			matrixC = math.subtract(matrixA, scalar);
-			console.log(matrixC);
 			insertDiv("subtraction", true, matrixC);
 		}
-		console.log(matrixC);
 	} catch (err) {
-		console.log(err);
 		alert("Wrong input");
 	}
 }
@@ -185,7 +166,6 @@ document
 	.getElementById("division")
 	.addEventListener("click", handleDivisionClick);
 function handleDivisionClick() {
-	console.log("clicked");
 	if (isDiv) {
 		document
 			.getElementById("division")
@@ -193,7 +173,6 @@ function handleDivisionClick() {
 	}
 	isDiv = true;
 	if (matrixA.length == 0 || (matrixB.length == 0 && scalar == 0)) {
-		console.log("Can't perform the operation");
 		alert("Can't perform the operation");
 		return;
 	}
@@ -214,9 +193,7 @@ function handleDivisionClick() {
 			insertDiv("division", true, matrixC._data);
 		}
 
-		console.log(matrixC);
 	} catch (err) {
-		console.log(err);
 		alert("Wrong input");
 	}
 }
@@ -225,7 +202,6 @@ document
 	.getElementById("multiplication")
 	.addEventListener("click", handleMultiplicationClick);
 function handleMultiplicationClick() {
-	console.log("clicked");
 	if (isMul) {
 		document
 			.getElementById("multiplication")
@@ -233,7 +209,6 @@ function handleMultiplicationClick() {
 	}
 	isMul = true;
 	if (matrixA.length == 0 || (matrixB.length == 0 && scalar == 0)) {
-		console.log("Can't perform the operation");
 		alert("Can't perform the operation");
 		return;
 	}
@@ -254,9 +229,7 @@ function handleMultiplicationClick() {
 			insertDiv("multiplication", true, matrixC._data);
 		}
 
-		console.log(matrixC);
 	} catch (err) {
-		console.log(err);
 		alert("Wrong input");
 	}
 }
@@ -273,7 +246,6 @@ function handleInverseClick() {
 	}
 	isInv = true;
 	if (matrixA.length == 0) {
-		console.log("Can't perform the operation");
 		alert("Can't perform the operation");
 		return;
 	}
@@ -284,9 +256,7 @@ function handleInverseClick() {
 	try {
 		matrixC = math.inv(matrixA1);
 		insertDiv("inverse", false, matrixC._data);
-		console.log(matrixC);
 	} catch (err) {
-		console.log(err);
 		alert("Wrong input");
 	}
 }
@@ -295,7 +265,6 @@ document
 	.getElementById("transpose")
 	.addEventListener("click", handleTransposeClick);
 function handleTransposeClick() {
-	console.log("clicked");
 	if (isTrans) {
 		document
 			.getElementById("transpose")
@@ -303,7 +272,6 @@ function handleTransposeClick() {
 	}
 	isTrans = true;
 	if (matrixA.length == 0) {
-		console.log("Can't perform the operation");
 		alert("Can't perform the operation");
 		return;
 	}
@@ -313,10 +281,8 @@ function handleTransposeClick() {
 	let matrixC = [];
 	try {
 		matrixC = math.transpose(matrixA1);
-		console.log(matrixC);
 		insertDiv("transpose", false, matrixC._data);
 	} catch (err) {
-		console.log(err);
 		alert("Wrong input");
 	}
 }
