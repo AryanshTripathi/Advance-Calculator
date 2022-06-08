@@ -158,7 +158,6 @@ stringMakers.forEach((element) => {
 
 		/* We just show the expression on the calculator screen */
 		screen.innerText = expression;
-		console.log(calculatorString);
 	}
 });
 
@@ -247,7 +246,6 @@ function handleHistoryClick() {
 /* Addng an event listener to "=" button */
 document.getElementById("equals").addEventListener("click", showResult);
 function showResult() {
-	console.log("Result Shown");
 	calculateExpression();
 }
 
@@ -396,9 +394,6 @@ function calculateExpression() {
 		}
 	}
 
-	// console.log(s);
-	// console.log(cntOdds);
-
 	/* Calculate the result */
 	let result;
 
@@ -408,7 +403,6 @@ function calculateExpression() {
 		result = "Wrong Syntax";
 	}
 
-	console.log(result);
 	/* Push the calculation and result to our history array */
 	history.push({
 		calculation: expression,
@@ -427,7 +421,6 @@ function calculateExpression() {
 	/* Show the result and set result counter variable to true */
 	screen.innerText = result;
 	isResultBeingShown = true;
-	// console.log(result);
 }
 
 function fact(n) {
