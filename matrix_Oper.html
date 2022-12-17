@@ -33,29 +33,24 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.1/math.js"
 			integrity="sha512-qBGHnIjw1CTZC0Vpshjjb4StUqVHm8LqqE4cco3FdEu1lS+gpXv/HON5qNjNq5mVnIlZPABGqkGksRrV6NZx+A=="
 			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
+			referrerpolicy="no-referrer"></script>
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.1/math.min.js"
 			integrity="sha512-jtodZNqORu9GqDzVzrnVAytVBmUApWx1koZTawvEEbnRQIbzeve/3QtHVesUUK0eh1sxY9UZMIZD7a4PAu9XeQ=="
 			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
+			referrerpolicy="no-referrer"></script>
 	</head>
 	<body class="font-openSans">
 		<div>
 			<h1
-				class="w-full text-4xl text-center py-6 h-20 bg-gradient-to-b from-violet-800 via-violet-600 to-purple-500 text-white"
-			>
+				class="w-full text-4xl text-center py-6 h-20 bg-gradient-to-b from-violet-800 via-violet-600 to-purple-500 text-white">
 				Matrix Calculator
 			</h1>
 			<div
-				class="w-full mx-auto p-2 bg-gradient-to-b from-purple-500 to-purple-600 text-white"
-			>
+				class="w-full mx-auto p-2 bg-gradient-to-b from-purple-500 to-purple-600 text-white">
 				<div id="matrix-a" class="w-full flex justify-center p-2">
 					<form
-						class="leading-tight sm:leading-8 text-xl w-full text-center text-slate-200 m-1 p-2"
-					>
+						class="leading-tight sm:leading-8 text-xl w-full text-center text-slate-200 m-1 p-2">
 						<div class="w-4/5 mx-auto">
 							<fieldset class="m-2 p-2">
 								<label for="row-input-a" class="p-2 m-1 block">
@@ -64,8 +59,7 @@
 										required
 										type="number"
 										id="row-input-a"
-										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg"
-									/>
+										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg" />
 								</label>
 
 								<label for="col-input-a" class="p-2 m-1 block">
@@ -74,19 +68,17 @@
 										required
 										type="number"
 										id="col-input-a"
-										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg"
-									/>
+										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg" />
 								</label>
 
 								<label for="matrix-input-a" class="p-2 m-1 block">
-									Enter element of matrix A row wise:
+									Enter all the elements of matrix A row wise:
 									<br />
 									<input
 										required
 										type="text"
 										id="matrix-input-a"
-										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg"
-									/>
+										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg" />
 								</label>
 							</fieldset>
 							<hr />
@@ -98,8 +90,7 @@
 										type="number"
 										id="row-input-b"
 										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg"
-										value="0"
-									/>
+										value="0" />
 								</label>
 
 								<label for="col-input-b" class="p-2 m-1 block">
@@ -108,18 +99,16 @@
 										type="number"
 										id="col-input-b"
 										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg"
-										value="0"
-									/>
+										value="0" />
 								</label>
 
 								<label for="matrix-input-b" class="p-2 m-1 block">
-									Enter elements of matrix B row wise:
+									Enter all the elements of matrix B row wise:
 									<br />
 									<input
 										type="text"
 										id="matrix-input-b"
-										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg"
-									/>
+										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg" />
 								</label>
 							</fieldset>
 							<hr />
@@ -131,16 +120,14 @@
 									<input
 										type="number"
 										id="scalar-input"
-										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg"
-									/>
+										class="block mx-auto my-2 px-1 md:w-96 sm:w-48 w-32 h-8 bg-zinc-800 rounded-lg" />
 								</label>
 							</fieldset>
 						</div>
 						<button
 							type="button"
 							class="py-1 px-2 border-2 w-24 rounded-xl mt-1 hover:cursor-pointer bg-red-500 hover:bg-white hover:border-red-500 hover:text-red-500 active:border-black active:text-black"
-							id="submit-form-btn"
-						>
+							id="submit-form-btn">
 							Submit
 						</button>
 					</form>
@@ -151,12 +138,10 @@
 			<div class="flex justify-center items-center">
 				<div
 					id="addition"
-					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700"
-				>
+					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700">
 					<div class="heading-container w-full">
 						<div
-							class="w-40 heading text-center bg-primary rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer"
-						>
+							class="w-40 heading text-center bg-primary rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer">
 							Addition
 						</div>
 					</div>
@@ -166,12 +151,10 @@
 			<div class="flex justify-center items-center">
 				<div
 					id="subtraction"
-					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700"
-				>
+					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700">
 					<div class="heading-container w-full">
 						<div
-							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer"
-						>
+							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer">
 							Subtraction
 						</div>
 					</div>
@@ -181,12 +164,10 @@
 			<div class="flex justify-center items-center">
 				<div
 					id="multiplication"
-					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700"
-				>
+					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700">
 					<div class="heading-container w-full">
 						<div
-							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer"
-						>
+							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer">
 							Multiplication
 						</div>
 					</div>
@@ -196,12 +177,10 @@
 			<div class="flex justify-center items-center">
 				<div
 					id="division"
-					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700"
-				>
+					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700">
 					<div class="heading-container w-full">
 						<div
-							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer"
-						>
+							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer">
 							Division
 						</div>
 					</div>
@@ -211,12 +190,10 @@
 			<div class="flex justify-center items-center">
 				<div
 					id="inverse"
-					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700"
-				>
+					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700">
 					<div class="heading-container w-full">
 						<div
-							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer"
-						>
+							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer">
 							Inverse
 						</div>
 					</div>
@@ -226,12 +203,10 @@
 			<div class="flex justify-center items-center">
 				<div
 					id="transpose"
-					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700"
-				>
+					class="w-full text-2xl p-3 bg-gradient-to-tl from-purple-700 via-pink-500 via-pink-600 to-purple-700">
 					<div class="heading-container w-full">
 						<div
-							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer"
-						>
+							class="w-40 heading bg-primary text-center rounded-xl m-auto p-2 text-white border-2 border-black hover:cursor-pointer">
 							Transpose
 						</div>
 					</div>
